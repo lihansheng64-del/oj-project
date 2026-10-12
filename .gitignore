@@ -1,0 +1,14 @@
+# 编译产物
+*.out.actual
+*.exe
+*.o
+a.out
+bin/
+build/
+__pycache__/
+*.pyc
+
+# 编辑器 / 系统文件
+.vscode/
+.idea/
+.DS_Store
