@@ -13,7 +13,8 @@
 ├── template/            # 新建题目时复制的模板
 └── scripts/
     ├── new_problem.sh   # 新建题目
-    └── run_tests.sh     # 编译并运行样例 / 测试
+    ├── run_tests.sh     # 编译并运行样例 / 测试
+    └── stress.sh        # 对拍（需要 brute.cpp 和 gen.py）
 ```
 
 ## 分支
@@ -44,3 +45,13 @@ scripts/run_tests.sh problems/0001-a-plus-b
 
 每个测试点输出 `AC` / `WA` / `TLE` / `RE`，比较时忽略行尾空格和末尾空行。
 单个测试点默认限时 2 秒，可用 `TIMEOUT=1 scripts/run_tests.sh ...` 修改。
+
+## 对拍
+
+在题目目录下放 `brute.cpp`（暴力解）和 `gen.py`（随机数据生成器，第一个参数是种子），然后：
+
+```bash
+scripts/stress.sh problems/0001-a-plus-b 500
+```
+
+出现不一致时会打印那组输入和两边的输出。
